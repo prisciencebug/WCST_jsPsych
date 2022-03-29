@@ -1,0 +1,1 @@
+const language = de; //avaliable languages: english (en), hungarian (hu), french (fr), spanish (es), portuguese (pt), german (de)
