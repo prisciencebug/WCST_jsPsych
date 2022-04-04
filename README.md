@@ -1,3 +1,6 @@
+# Fork message
+This is a fork from https://github.com/vekteo/WCST_jsPsych. The files in the "online" folder have been modified to include a subjectId prompt / plugin and German instructions. The rest is the same as below.
+
 # WCST_JSPsych
 
 <i>Created by the MEMO Team of Lyon Neuroscience Research Center (CRNL) (PI: Dezso Nemeth)</i>

@@ -237,3 +237,51 @@ const pt = {
         goBackButton: "Alterar os parâmetros"
     },
 }
+
+const de = {
+    welcomePage: {
+        welcome: "Willkommen!",
+        clickNext: "Klicken Sie auf <strong>Weiter</strong>, um fortzufahren!"
+    },
+    instruction: {
+        fourCards: "In dieser Aufgabe werden vier Karten auf dem Bildschirm erscheinen. Auf jeder Karte sind Figuren, die sich hinsichtlich ihrer  <strong>Anzahl</strong>, ihrer <strong>Farbe</strong>, und ihrer <strong>Form</strong> unterscheiden.",
+        newCard: "Ab und zu werden Sie eine neuen Karte erhalten. Ihre Aufgabe wird sein, zu entscheiden, zu welcher der vier Karten die neue Karte gehört.",
+        clickCard: "Sie können die neue Karte zuordnen, indem Sie auf eine der vier Karten klicken",
+        rule: "Die korrekte Antwort hängt von einer <strong>Regel</strong> ab. Wir werden Ihnen nicht verraten, was die Regel ist. Wir werden Ihnen aber verraten, ob Ihre Antwort korrekt war oder nicht.",
+    },
+    instruction2: {
+        ruleChange: "Die <strong>Regel</strong> kann sich während der Aufgabe verändern",
+        ruleChange2: "Wenn sich die Regel verändert, sollten Sie so schnell wie möglich herausfinden, was die neue Regel ist.",
+        clickNext: "Wenn die Anweisungen für Sie klar sind, können Sie per Klick auf den Weiter-Knopf mit der Aufgabe beginnen!",
+
+    },
+    task: {
+        instruction: "Zu welcher Karte gehört die neue Karte? Klicken Sie eine der vier Karten oben an!"
+    },
+    end:  {
+        end: "Ende der Aufgabe.",
+        thankYou: "Vielen Dank!",
+    },
+    button: {
+        next: "Weiter",
+        previous: "Zurück"
+    },
+    fullscreen: {
+        fullscreenText: "Das Experiment wechselt in den Vollbildmodus, wenn Sie den folgenden Knopf drücken.",
+        fullscreenButton: "Fortfahren"
+    },
+    feedback: {
+        correct: "Korrekt!",
+        wrong: "Falsch!"
+    },
+    parameters: {
+        subject: "Versuchspersonennummer:",
+        session: "Sitzungsnummer:"
+    },
+    startWarning: {
+        startSubject: "Sie sind dabei, die Aufgabe mit der <strong>Versuchspersonennummer </strong> und",
+        startSession: "<strong>der Sitzungsnummer</strong> zu beginnen",
+        startButton: "Mit der Aufgabe beginnen!",
+        goBackButton: "Parameter anpassen"
+    },
+}

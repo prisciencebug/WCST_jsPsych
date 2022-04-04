@@ -17,10 +17,20 @@ let counter = 0;
 let targetImages = [];
 let totalErrors = 0;
 let appliedRules = [];
-const subjectId = jsPsych.randomization.randomID(15)
+//const subjectId = jsPsych.randomization.randomID(15)
 
 /*************** TIMELINE ELEMENTS ***************/
-
+var subjectId = {
+    type: "survey-text",
+    questions: [
+      {prompt: "Bitte schalten Sie Musik, Handys und andere Geräte, die Sie ablenken könnten, aus. Geben Sie unten Ihre Versuchspersonennummer ein: ", required: true}],
+    on_finish: function(data) {
+      var responses = JSON.parse(data.responses);
+    }
+  };
+  
+  timeline.push(subjectId);
+  
 const instructions = {
     type: "instructions",
     pages: [
