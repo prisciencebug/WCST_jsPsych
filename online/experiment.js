@@ -23,10 +23,13 @@ let appliedRules = [];
 var subjectId = {
     type: "survey-text",
     questions: [
-      {prompt: "Bitte schalten Sie Musik, Handys und andere Geräte, die Sie ablenken könnten, aus. Geben Sie unten Ihre Versuchspersonennummer ein: ", required: true}],
-    on_finish: function(data) {
-      var responses = JSON.parse(data.responses);
-    }
+      {prompt: "Bitte geben Sie unten Ihre Versuchspersonennummer ein: ", required: true}
+    ],
+        on_finish: function (data) {
+        let response = JSON.parse(JSON.stringify(data.responses));
+        let code = response.Q0;
+        jsPsych.data.addProperties({ subject_ID: code });
+        }               
   };
   
   timeline.push(subjectId);
@@ -162,12 +165,12 @@ function CheckRestricted(src, restricted) {
         
 timeline.push({type: "fullscreen", fullscreen_mode: true}, instructions)
 
-for (let i = 1; i < 65; i++) {
+for (let i = 1; i < 5; i++) { // CHANGE BACK TO 65
     let targetCard = Object.values(cards).filter(card => card.trialNumber === i)[0]
     timeline.push(addIfNoEnd(targetCard))
 }
 
-jsPsych.data.addProperties({subject: subjectId});
+//jsPsych.data.addProperties({subject: subjectId});
 timeline.push(endTask, {type: "fullscreen", fullscreen_mode: false})
 
 /*************** EXPERIMENT START AND DATA UPDATE ***************/
@@ -176,7 +179,8 @@ jsPsych.init({
 timeline: timeline,
 preload_images: preloadImages(),
 on_close: function() {
-    jsPsych.data.get().localSave('csv',`WCST_subject_${subjectId}_quitted_output.csv`); 
+    var subjID = jsPsych.data.get().last(1).values()[0]['subjectId']
+    jsPsych.data.get().localSave('csv',`WCST_subject_${subjID}_quitted_output.csv`); 
 },
 on_data_update: function () {
 
@@ -251,7 +255,8 @@ on_data_update: function () {
         }
     },
            
-    on_finish: function() {       
-        jsPsych.data.get().localSave('csv',`WCST_subject_${subjectId}_output.csv`); 
+    on_finish: function() {     
+        var subjID = jsPsych.data.get().last(1).values()[0]['subjectId']
+        jsPsych.data.get().localSave('csv',`WCST_subject_${subjID}_output.csv`); 
     },
 });
