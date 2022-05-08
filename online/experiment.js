@@ -166,7 +166,7 @@ function CheckRestricted(src, restricted) {
         
 timeline.push({type: "fullscreen", fullscreen_mode: true}, instructions)
 
-for (let i = 1; i < 5; i++) { // CHANGE BACK TO 65
+for (let i = 1; i < 65; i++) { // CHANGE BACK TO 65
     let targetCard = Object.values(cards).filter(card => card.trialNumber === i)[0]
     timeline.push(addIfNoEnd(targetCard))
 }
@@ -257,7 +257,7 @@ on_data_update: function () {
     },
            
     on_finish: function() {     
-        let subjID = jsPsych.data.get().last(1).values()[0]['subjectId']
+        let subjID = jsPsych.data.get().last(1).values()[0]['subject_ID'] // THIS SHOULD BE THE NAME OF THE NEW VAR WE ADDED TO DATA.ADDPROPERTIES ABOVE, *NOT* THE VAR NAME
         jsPsych.data.get().localSave('csv',`WCST_subject_${subjID}_output.csv`); 
     },
 });
