@@ -258,6 +258,6 @@ on_data_update: function () {
            
     on_finish: function() {     
         let subjID = jsPsych.data.get().last(1).values()[0]['subjectId']
-        jsPsych.data.get().localSave('csv',`WCST_subject_${subjectId}_output.csv`); 
+        jsPsych.data.get().localSave('csv',`WCST_subject_${subjID}_output.csv`); 
     },
 });
