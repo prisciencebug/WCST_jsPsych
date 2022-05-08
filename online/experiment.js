@@ -23,14 +23,15 @@ let appliedRules = [];
 var subjectId = {
     type: "survey-text",
     questions: [
-      {prompt: "Bitte geben Sie unten Ihre Versuchspersonennummer ein: ", required: true}
-    ],
-        on_finish: function (data) {
-        let response = JSON.parse(JSON.stringify(data.responses));
-        let code = response.Q0;
-        jsPsych.data.addProperties({ subject_ID: code });
-        }               
-  };
+      {prompt: "Bitte geben Sie unten Ihre Versuchspersonennummer ein: ", required: true}],
+      on_finish: function(data) {
+        var responses = JSON.parse(data.responses);
+        var id = responses.Q0;
+        jsPsych.data.addProperties({
+          subject_ID: id
+        });
+    }               
+};
   
   timeline.push(subjectId);
   
@@ -256,7 +257,7 @@ on_data_update: function () {
     },
            
     on_finish: function() {     
-        var subjID = jsPsych.data.get().last(1).values()[0]['subjectId']
-        jsPsych.data.get().localSave('csv',`WCST_subject_${subjID}_output.csv`); 
+        let subjID = jsPsych.data.get().last(1).values()[0]['subjectId']
+        jsPsych.data.get().localSave('csv',`WCST_subject_${subjectId}_output.csv`); 
     },
 });
